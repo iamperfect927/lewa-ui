@@ -5,21 +5,21 @@ export const sidebarConstants = [
     {
         name:'Dashboard',
         icon:LayoutDashboard,
-        url:'#'
+        url:'dashboard'
     },
     {
         name:'Schools',
         icon:School,
-        url:'#'
+        url:'school'
     },
     {
         name:'Static data',
         icon: Database,
-        url:'#'
+        url:'staticdata'
     },
     {
         name:'Users',
         icon:Users,
-        url:'#'
+        url:'users'
     }
 ]

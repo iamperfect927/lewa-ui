@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { SidebarProvider, SidebarTrigger, } from "@/components/ui/sidebar"
 import  SideBar  from '../components/sidebar'
 
 
@@ -21,20 +21,18 @@ export const metadata: Metadata = {
   description: "Modern admin dashboard with comprehensive school management",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
   return (
-    <SidebarProvider className="gap-3 rounded-2xl m-2">        
-      <html lang="en">
+    <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-              <SidebarTrigger className="h-10"/>
-              <SideBar />
-                {children}                    
+          <SidebarProvider className="gap-3 rounded-2xl bg-accent" > 
+            <div className="flex h-screen">
+                <SideBar />
+                <SidebarTrigger className="text-"/>
+                  {children}
+            </div>       
+          </SidebarProvider>
         </body>
       </html>
-    </SidebarProvider>
   );
 }
