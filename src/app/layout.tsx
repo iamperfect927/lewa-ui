@@ -27,16 +27,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <SidebarProvider>
-          <main>
-            <SidebarTrigger />
-            <SideBar />
-            {children}
-          </main>
-        </SidebarProvider>
-      </body>
-    </html>
+    <SidebarProvider className="gap-3 rounded-2xl m-2">        
+      <html lang="en">
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+              <SidebarTrigger className="h-10"/>
+              <SideBar />
+                {children}                    
+        </body>
+      </html>
+    </SidebarProvider>
   );
 }

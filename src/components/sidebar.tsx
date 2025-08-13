@@ -7,35 +7,36 @@
 const SideBar = () => {
     // const pathName = usePathname()
   return (
-    <Sidebar collapsible="icon" className="bg-blue-700" side="left">
-        <div className="flex-col gap-3">
-        <SidebarHeader>
-            <div>
-                <h2 className="text-lg text-white font-semibold">Super Admin</h2>
-                <button>
-                    <Menu className="h-4 w-4 text-white"/>
-                </button>
-            </div>
-        </SidebarHeader>
-        <SidebarContent>
-            <SidebarGroup>
-                <SidebarGroupContent>
-                    <SidebarMenu>
-                        {sidebarConstants.map((item) => (
-                            <SidebarMenuItem key={item.name}>
-                                <SidebarMenuButton asChild>
-                                    <a href={item.url}>
-                                        <item.icon />
-                                        <span>{item.name}</span>
-                                    </a>
-                                </SidebarMenuButton>
-                            </SidebarMenuItem>
-                        ))}
-                    </SidebarMenu>
-                </SidebarGroupContent>
-            </SidebarGroup>
-        </SidebarContent>
+    <Sidebar collapsible="icon" side="left" className="bg-accent">
+        
+        <div className="m-2 rounded-4xl p-2">
+            <SidebarHeader className="flex-row-reverse">                
+                    <h1 className="text-2xl justify-between text-white font-semibold">Super Admin</h1>
+                    <button>
+                        <Menu className="h-6 w-6 text-white"/>
+                    </button>
+                
+            </SidebarHeader>
+            <SidebarContent >
+                <SidebarGroup>
+                    <SidebarGroupContent>
+                        <SidebarMenu>
+                            {sidebarConstants.map((item) => (
+                                <SidebarMenuItem key={item.name}>
+                                    <SidebarMenuButton asChild>
+                                        <a href={item.url}>
+                                            <item.icon />
+                                            <span>{item.name}</span>
+                                        </a>
+                                    </SidebarMenuButton>
+                                </SidebarMenuItem>
+                            ))}
+                        </SidebarMenu>
+                    </SidebarGroupContent>
+                </SidebarGroup>
+            </SidebarContent>
         </div>
+       
     </Sidebar>
   )
 }
