@@ -41,6 +41,17 @@ const SchoolsTable = () => {
             </div>
         </div>
       <div className="px-6 pb-6">
+<<<<<<< HEAD
+=======
+
+    <div className="my-2 rounded-lg  w-full">
+      <div className="text-2xl  py-2 bg-primary-header-background rounded-tl-2xl rounded-tr-2xl flex justify-between items-center">
+          <h2 className="pl-5">All Schools</h2>
+          <Input className="w-[200px] rounded-3xl bg-yellow-50"/>      
+      </div>
+      <div className="px-6 pb-6 bg-white">
+
+>>>>>>> d3504bc88debdbd4ff93460254992648f5c88e2b
         <Table>
           <TableHeader>
             <TableRow className="border-b border-gray-200">

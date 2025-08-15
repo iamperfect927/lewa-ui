@@ -63,7 +63,12 @@ export default function Dashboard() {
                   icon={<PlusCircle />}
                   variant="primary"
                   onClick={handleRegisterSchool}
+<<<<<<< HEAD
                   className="rounded-lg"
+=======
+                  className="w-full"
+
+>>>>>>> d3504bc88debdbd4ff93460254992648f5c88e2b
                 />
             </div>
             <div className=" flex-1 ...">
