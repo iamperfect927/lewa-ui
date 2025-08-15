@@ -2,33 +2,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Button } from "@/components/ui/button"
 import { Input } from "./ui/input"
 import { Search } from "lucide-react"
-
-const schools = [
-  {
-    name: "Lycee Bilingue",
-    region: "North-West",
-    students: 450,
-    status: "Active"
-  },
-  {
-    name: "Green Valley School",
-    region: "Central",
-    students: 370,
-    status: "Active"
-  },
-  {
-    name: "Riverdale Lycée School",
-    region: "East",
-    students: 510,
-    status: "Active"
-  },
-  {
-    name: "Pioneer Academy",
-    region: "South-West",
-    students: 300,
-    status: "Inactive"
-  }
-]
+import { schools } from "@/lib/schoolsTable-data"
 
 const SchoolsTable = () => {
   return (
@@ -53,8 +27,8 @@ const SchoolsTable = () => {
           </TableHeader>
           
           <TableBody>
-            {schools.map((school, index) => (
-              <TableRow key={index} className="border-b border-gray-100 hover:bg-gray-50">
+            {schools.map(school => (
+              <TableRow key={school.name} className="border-b border-gray-100 hover:bg-gray-50">
                 <TableCell className="text-left text-gray-900 font-medium">
                   {school.name}
                 </TableCell>

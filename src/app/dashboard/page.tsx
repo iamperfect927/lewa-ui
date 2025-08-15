@@ -10,6 +10,7 @@ import StatCard from "../../components/ui/StatsCard";
 import {  School,ShieldUser, UserRound, Wallet, Users2, Users } from "lucide-react"
 import SchoolAreaDistributionChart from "@/components/ui/SchoolAreaDistributionChart";
 import StudentsPerSchoolChart from "@/components/ui/StudentsPerSchoolChart";
+import UsageStatsChart from "@/components/usageStatsChart";
 
 
 export default function Dashboard() {
@@ -91,7 +92,14 @@ export default function Dashboard() {
           <SchoolAreaDistributionChart />
         </div>
 
-        <SchoolsTable />
+        <div className="my-5">
+          <UsageStatsChart />
+        </div>
+        <div className="my-5">
+          <SchoolsTable />
+        </div>
+
+        
 
       </main>
     </div>

@@ -14,7 +14,7 @@ import {
   SidebarGroupLabel,
 } from '@/components/ui/sidebar'
 import { sidebarConstants } from '@/lib/sidebar-const'
-import { cn } from '@/lib/utils' // shadcn util. If you don't have it, see note below.
+import { cn } from '@/lib/utils'
 
 const SideBar = () => {
   const pathname = usePathname()
