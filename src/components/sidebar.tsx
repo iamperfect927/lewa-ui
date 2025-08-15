@@ -1,11 +1,11 @@
- import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarHeader } from "@/components/ui/sidebar"
- import { Menu } from "lucide-react"
-//  import { usePathname } from "next/navigation"
+import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarHeader } from "@/components/ui/sidebar"
+import { Menu } from "lucide-react"
+import { usePathname } from "next/navigation"
 
- import { sidebarConstants } from "@/lib/sidebar-const"
+import { sidebarConstants } from "@/lib/sidebar-const"
 
 const SideBar = () => {
-    // const pathName = usePathname()
+    const pathName = usePathname()
   return (
     <Sidebar collapsible="icon" side="left" className="bg-accent">
         
@@ -22,11 +22,15 @@ const SideBar = () => {
                     <SidebarGroupContent>
                         <SidebarMenu>
                             {sidebarConstants.map((item) => (
-                                <SidebarMenuItem key={item.name}>
-                                    <SidebarMenuButton asChild>
-                                        <a href={item.url}>
-                                            <item.icon />
-                                            <span>{item.name}</span>
+                                <SidebarMenuItem key={item.name} >
+                                    <SidebarMenuButton 
+                                        asChild
+                                        isActive={pathName === item.url}
+                                        className="my-3 text-2xl text-white hover:bg-blue-800 data-[active]:text-white">
+                                        <a href={item.url} >                                           
+                                            <button><item.icon className="h-6 w-6"/></button>
+                                            <span className="">{item.name}</span>                                           
+
                                         </a>
                                     </SidebarMenuButton>
                                 </SidebarMenuItem>
