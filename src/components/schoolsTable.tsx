@@ -34,7 +34,7 @@ const SchoolsTable = () => {
     <div className="bg-white rounded-lg shadow-sm border w-full">
     <div className="bg-blue-200 p-2 rounded-t-2xl flex justify-between items-center">
         <h2 className="text-2xl text-gray-900">Schools</h2>
-        <Input className="w-[250px] bg-yellow-50"/>      
+        <Input className="w-[200px] rounded-3xl bg-yellow-50"/>      
     </div>
       <div className="px-6 pb-6">
         <Table>
