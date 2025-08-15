@@ -50,7 +50,7 @@ export default function Dashboard() {
                   icon={<PlusCircle />}
                   variant="primary"
                   onClick={handleRegisterSchool}
-                  className=""
+                  className="rounded-lg"
                 />
             </div>
             <div className="w-32 flex-1 ...">

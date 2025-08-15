@@ -88,7 +88,7 @@ const SchoolsTable = () => {
         </Table>
         
         <div className="mt-6">
-          <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-2 rounded-lg">
+          <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-2 rounded-xl">
             View All
           </Button>
         </div>
