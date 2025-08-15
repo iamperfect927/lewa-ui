@@ -8,7 +8,8 @@ import { sidebarConstants } from "@/lib/sidebar-const"
 const SideBar = () => {
     const pathName = usePathname()
   return (
-    <Sidebar collapsible="icon" side="left" className="bg-accent">
+    <div className="rounded-3xl">
+        <Sidebar collapsible="icon" side="left" className="bg-accent">
         
         <div className="m-2 rounded-4xl p-2">
             <SidebarContent >
@@ -42,6 +43,8 @@ const SideBar = () => {
         </div>
        
     </Sidebar>
+    </div>
+    
   )
 }
 
