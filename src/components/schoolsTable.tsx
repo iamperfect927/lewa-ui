@@ -31,12 +31,12 @@ const schools = [
 
 const SchoolsTable = () => {
   return (
-    <div className="bg-white rounded-lg shadow-sm rounded-t-2xl w-full">
-    <div className="bg-blue-200 p-2 rounded-t-2xl flex justify-between items-center">
-        <h2 className="text-2xl text-gray-900">Schools</h2>
-        <Input className="w-[200px] rounded-3xl bg-yellow-50"/>      
-    </div>
-      <div className="px-6 pb-6">
+    <div className="my-2 rounded-lg  w-full">
+      <div className="text-2xl  py-2 bg-primary-header-background rounded-tl-2xl rounded-tr-2xl flex justify-between items-center">
+          <h2 className="pl-5">All Schools</h2>
+          <Input className="w-[200px] rounded-3xl bg-yellow-50"/>      
+      </div>
+      <div className="px-6 pb-6 bg-white">
         <Table>
           <TableHeader>
             <TableRow className="border-b border-gray-200">
@@ -44,7 +44,7 @@ const SchoolsTable = () => {
               <TableHead className="text-left font-semibold text-gray-900">Region</TableHead>
               <TableHead className="text-center font-semibold text-gray-900">Students</TableHead>
               <TableHead className="text-center font-semibold text-gray-900">Status</TableHead>
-              <TableHead className="text-right font-semibold text-gray-900">Actions</TableHead>
+              <TableHead className="text-center font-semibold text-gray-900">Actions</TableHead>
             </TableRow>
           </TableHeader>
           
@@ -69,7 +69,7 @@ const SchoolsTable = () => {
                     {school.status}
                   </span>
                 </TableCell>
-                <TableCell className="text-right">
+                <TableCell className="text-left">
                   <div className="flex items-center justify-end gap-4">
                     <button className="text-green-600 hover:text-green-800 font-medium text-sm">
                       View
