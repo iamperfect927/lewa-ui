@@ -1,42 +1,20 @@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
 import { Input } from "./ui/input"
-
-const schools = [
-  {
-    name: "Lycee Bilingue",
-    region: "North-West",
-    students: 450,
-    status: "Active"
-  },
-  {
-    name: "Green Valley School",
-    region: "Central",
-    students: 370,
-    status: "Active"
-  },
-  {
-    name: "Riverdale Lycée School",
-    region: "East",
-    students: 510,
-    status: "Active"
-  },
-  {
-    name: "Pioneer Academy",
-    region: "South-West",
-    students: 300,
-    status: "Inactive"
-  }
-]
+import { Search } from "lucide-react"
+import { schools } from "@/lib/schoolsTable-data"
 
 const SchoolsTable = () => {
   return (
-    <div className="my-2 rounded-lg  w-full">
-      <div className="text-2xl  py-2 bg-primary-header-background rounded-tl-2xl rounded-tr-2xl flex justify-between items-center">
-          <h2 className="pl-5">All Schools</h2>
-          <Input className="w-[200px] rounded-3xl bg-yellow-50"/>      
-      </div>
-      <div className="px-6 pb-6 bg-white">
+    <div className="bg-white rounded-lg shadow-sm rounded-t-2xl w-full">
+        <div className="bg-blue-200 p-2 rounded-t-2xl flex justify-between items-center">
+            <h2 className="text-2xl text-gray-900 font-bold">Schools</h2>
+            <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-300 h-4 w-4" />
+                <Input className="w-[200px] rounded-3xl bg-slate-100 pl-10 placeholder:text-blue-300 border-0" placeholder="Search schools" />      
+            </div>
+        </div>
+      <div className="px-6 pb-6">
         <Table>
           <TableHeader>
             <TableRow className="border-b border-gray-200">
@@ -49,8 +27,8 @@ const SchoolsTable = () => {
           </TableHeader>
           
           <TableBody>
-            {schools.map((school, index) => (
-              <TableRow key={index} className="border-b border-gray-100 hover:bg-gray-50">
+            {schools.map(school => (
+              <TableRow key={school.name} className="border-b border-gray-100 hover:bg-gray-50">
                 <TableCell className="text-left text-gray-900 font-medium">
                   {school.name}
                 </TableCell>
@@ -88,7 +66,7 @@ const SchoolsTable = () => {
         </Table>
         
         <div className="mt-6">
-          <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-2 rounded-lg">
+          <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-2 rounded-xl">
             View All
           </Button>
         </div>
