@@ -10,12 +10,12 @@ export const sidebarConstants = [
     {
         name:'Schools',
         icon:School,
-        url:'school'
+        url:'schools'
     },
     {
         name:'Static data',
         icon: Database,
-        url:'staticdata'
+        url:'static-data'
     },
     {
         name:'Users',

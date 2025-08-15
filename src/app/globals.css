@@ -85,6 +85,7 @@
   :root {
     --background: 0 0% 100%;
     --sidebar-background:220, 96%, 66%;
+    ;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
