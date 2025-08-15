@@ -30,7 +30,8 @@ const SideBar = () => {
                 <h1 className="text-2xl text-white font-semibold">Super Admin</h1>
               </SidebarGroupLabel>
 
-              <SidebarGroupContent>
+              <div className='mt-8'>
+                <SidebarGroupContent>
                 <SidebarMenu>
                   {sidebarConstants.map((item) => {
                     const isActive = pathname === item.url || pathname.startsWith(`${item.url}/`)
@@ -53,6 +54,7 @@ const SideBar = () => {
                   })}
                 </SidebarMenu>
               </SidebarGroupContent>
+              </div>
             </SidebarGroup>
           </SidebarContent>
         </div>
