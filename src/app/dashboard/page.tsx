@@ -4,6 +4,7 @@ import GeneralStats from "./components/GeneralStatistics";
 import Logs from "./components/ui/Logs";
 import { PlusCircle, FileText, UserPlus } from "lucide-react";
 import AppButton from "@/components/ui/AppButton";
+import SchoolsTable from "@/components/schoolsTable";
 
 
 export default function Dashboard() {
@@ -71,6 +72,7 @@ export default function Dashboard() {
                 />
             </div>
         </div>
+        <SchoolsTable />
 
         {/* Buttons
         <div className="flex space-x-4 mb-6">
