@@ -24,11 +24,11 @@ const SideBar = () => {
         <div className="p-2 m-2">
             <SidebarContent >
                 <SidebarGroup>
-                    <SidebarGroupLabel>
+                    <SidebarGroupLabel className="gap-2 my-3.5">
                         <button>
                             <Menu className="h-6 w-6 text-white"/>
                         </button>                
-                        <h1 className="text-2xl text-white font-semibold">Super Admin</h1>
+                        <h1 className="text-2xl text-white font-bold">Super Admin</h1>
                     </SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
@@ -37,7 +37,7 @@ const SideBar = () => {
                                     <SidebarMenuButton 
                                         asChild
                                         isActive={pathName === item.url}
-                                        className="my-5 text-2xl text-white hover:bg-blue-800 data-[active]:text-white h-10">
+                                        className="my-3 text-2xl text-white hover:bg-blue-800 data-[active]:text-white">
                                         <a href={item.url} >                                           
                                             <button><item.icon className="h-6 w-6"/></button>
                                             <span className="">{item.name}</span>                                           
