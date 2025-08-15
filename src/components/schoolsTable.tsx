@@ -48,7 +48,7 @@ const SchoolsTable = () => {
               <TableHead className="text-left font-semibold text-gray-900">Region</TableHead>
               <TableHead className="text-center font-semibold text-gray-900">Students</TableHead>
               <TableHead className="text-center font-semibold text-gray-900">Status</TableHead>
-              <TableHead className="text-right font-semibold text-gray-900">Actions</TableHead>
+              <TableHead className="text-center font-semibold text-gray-900">Actions</TableHead>
             </TableRow>
           </TableHeader>
           
@@ -73,7 +73,7 @@ const SchoolsTable = () => {
                     {school.status}
                   </span>
                 </TableCell>
-                <TableCell className="text-right">
+                <TableCell className="text-left">
                   <div className="flex items-center justify-end gap-4">
                     <button className="text-green-600 hover:text-green-800 font-medium text-sm">
                       View

@@ -18,7 +18,7 @@ const AppButton: React.FC<AppButtonProps> = ({
   variant = "primary",
 }) => {
   const baseStyles =
-    "flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all duration-200";
+    "flex items-center justify-center gap-5 font-bold py-3 rounded-xl";
 
   const variants: Record<string, string> = {
     primary: "bg-blue-600 text-white hover:bg-blue-700",
