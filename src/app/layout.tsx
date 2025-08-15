@@ -31,7 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <SidebarProvider className="gap-3 rounded-2xl bg-accent"> 
-          <div className="flex h-screen">
+          <div className="flex h-screen my5">
             <SideBar />
             <SidebarTrigger className="text-black"/>
             {children}
