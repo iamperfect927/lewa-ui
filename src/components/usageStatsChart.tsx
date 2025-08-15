@@ -1,25 +1,8 @@
 "use client"
 
-import {
-  CartesianGrid,
-  Line,
-  LineChart,
-  XAxis,
-  YAxis,
-  Legend,
-  ResponsiveContainer
-} from "recharts"
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle
-} from "@/components/ui/card"
-import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent
-} from "@/components/ui/chart"
+import { CartesianGrid, Line, LineChart, XAxis, YAxis, Legend, ResponsiveContainer } from "recharts"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 import { cn } from "@/lib/utils"
 
 const chartData = [
@@ -40,6 +23,11 @@ const lineColors = {
   "2021": "#F687B3",
   "2022": "#38B2AC"
 }
+const chartConfig = {
+            "2020": { label: "2020", color: lineColors["2020"] },
+            "2021": { label: "2021", color: lineColors["2021"] },
+            "2022": { label: "2022", color: lineColors["2022"] }
+}
 
 const UsageStatsChart = () => {
   return (
@@ -49,13 +37,7 @@ const UsageStatsChart = () => {
         <CardTitle>Usage Stats</CardTitle>
       </CardHeader>
       <CardContent>
-        <ChartContainer
-          config={{
-            "2020": { label: "2020", color: lineColors["2020"] },
-            "2021": { label: "2021", color: lineColors["2021"] },
-            "2022": { label: "2022", color: lineColors["2022"] }
-          }}
-        >
+        <ChartContainer config={chartConfig}>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={chartData} margin={{ left: 12, right: 12 }}>
               <CartesianGrid vertical={false} />
@@ -66,9 +48,9 @@ const UsageStatsChart = () => {
                 cursor={false}
                 content={<ChartTooltipContent indicator="line" hideLabel />}
               />
-              <Line dataKey="2020" type="monotone" stroke={lineColors["2020"]} strokeWidth={2} dot />
-              <Line dataKey="2021" type="monotone" stroke={lineColors["2021"]} strokeWidth={2} dot />
-              <Line dataKey="2022" type="monotone" stroke={lineColors["2022"]} strokeWidth={2} dot />
+              <Line dataKey="2020" type="linear" stroke={lineColors["2020"]} strokeWidth={2} dot />
+              <Line dataKey="2021" type="linear" stroke={lineColors["2021"]} strokeWidth={2} dot />
+              <Line dataKey="2022" type="linear" stroke={lineColors["2022"]} strokeWidth={2} dot />
             </LineChart>
           </ResponsiveContainer>
         </ChartContainer>
