@@ -1,4 +1,5 @@
-import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarHeader } from "@/components/ui/sidebar"
+'use client'
+import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarHeader, SidebarGroupLabel } from "@/components/ui/sidebar"
 import { Menu } from "lucide-react"
 import { usePathname } from "next/navigation"
 
@@ -10,15 +11,14 @@ const SideBar = () => {
     <Sidebar collapsible="icon" side="left" className="bg-accent">
         
         <div className="m-2 rounded-4xl p-2">
-            <SidebarHeader className="flex-row-reverse">                
-                    <h1 className="text-2xl justify-between text-white font-semibold">Super Admin</h1>
-                    <button>
-                        <Menu className="h-6 w-6 text-white"/>
-                    </button>
-                
-            </SidebarHeader>
             <SidebarContent >
                 <SidebarGroup>
+                    <SidebarGroupLabel>
+                        <button>
+                            <Menu className="h-6 w-6 text-white"/>
+                        </button>
+                        <h1 className="text-2xl justify-between text-white font-semibold">Super Admin</h1>
+                    </SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu>
                             {sidebarConstants.map((item) => (

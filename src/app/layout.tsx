@@ -5,6 +5,7 @@ import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import  SideBar  from '../components/sidebar'
 import SchoolsTable from "@/components/schoolsTable";
+// import SchoolsTable from "@/components/schoolsTable";
 
 
 const geistSans = Geist({
@@ -33,7 +34,8 @@ export default function RootLayout({
         <SidebarProvider className="gap-3 rounded-2xl bg-accent"> 
           <div className="flex h-screen">
             <SideBar />
-            <SidebarTrigger className="text-"/>
+            <SidebarTrigger className="text-black"/>
+            <SchoolsTable />
             {children}
           </div>       
         </SidebarProvider>
