@@ -1,50 +1,63 @@
 'use client'
-import { Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarGroupLabel } from "@/components/ui/sidebar"
-import { Menu } from "lucide-react"
-import { usePathname } from "next/navigation"
 
-import { sidebarConstants } from "@/lib/sidebar-const"
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { Menu } from 'lucide-react'
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarGroupLabel,
+} from '@/components/ui/sidebar'
+import { sidebarConstants } from '@/lib/sidebar-const'
+import { cn } from '@/lib/utils' // shadcn util. If you don't have it, see note below.
 
 const SideBar = () => {
-    const pathName = usePathname()
+  const pathname = usePathname()
+
   return (
     <div className="rounded-3xl">
-        <Sidebar collapsible="icon" side="left" className="bg-accent">
-        
+      <Sidebar collapsible="icon" side="left">
         <div className="m-2 rounded-4xl p-2">
-            <SidebarContent >
-                <SidebarGroup>
-                    <SidebarGroupLabel>
-                        <button>
-                            <Menu className="h-6 w-6 text-white"/>
-                        </button>
-                        <h1 className="text-2xl justify-between text-white font-semibold">Super Admin</h1>
-                    </SidebarGroupLabel>
-                    <SidebarGroupContent>
-                        <SidebarMenu>
-                            {sidebarConstants.map((item) => (
-                                <SidebarMenuItem key={item.name} >
-                                    <SidebarMenuButton 
-                                        asChild
-                                        isActive={pathName === item.url}
-                                        className="my-3 text-2xl text-white hover:bg-blue-800 data-[active]:text-white">
-                                        <a href={item.url} >                                           
-                                            <button><item.icon className="h-6 w-6"/></button>
-                                            <span className="">{item.name}</span>                                           
+          <SidebarContent>
+            <SidebarGroup>
+              <SidebarGroupLabel>
+                <Menu className="h-6 w-6 text-white" />
+                <h1 className="text-2xl text-white font-semibold">Super Admin</h1>
+              </SidebarGroupLabel>
 
-                                        </a>
-                                    </SidebarMenuButton>
-                                </SidebarMenuItem>
-                            ))}
-                        </SidebarMenu>
-                    </SidebarGroupContent>
-                </SidebarGroup>
-            </SidebarContent>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  {sidebarConstants.map((item) => {
+                    const isActive = pathname === item.url || pathname.startsWith(`${item.url}/`)
+                    return (
+                      <SidebarMenuItem key={item.name}>
+                        <SidebarMenuButton
+                          asChild
+                          className={cn(
+                            'my-3 text-2xl text-white hover:bg-blue-800 hover:text-white rounded-xl',
+                            isActive && 'bg-blue-800', isActive && 'text-white'
+                          )}
+                        >
+                          <Link href={item.url}>
+                            <item.icon className="h-6 w-6" />
+                            <span>{item.name}</span>
+                          </Link>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    )
+                  })}
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          </SidebarContent>
         </div>
-       
-    </Sidebar>
+      </Sidebar>
     </div>
-    
   )
 }
 

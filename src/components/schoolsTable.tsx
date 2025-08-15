@@ -1,6 +1,7 @@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
 import { Input } from "./ui/input"
+import { Search } from "lucide-react"
 
 const schools = [
   {
@@ -32,10 +33,13 @@ const schools = [
 const SchoolsTable = () => {
   return (
     <div className="bg-white rounded-lg shadow-sm rounded-t-2xl w-full">
-    <div className="bg-blue-200 p-2 rounded-t-2xl flex justify-between items-center">
-        <h2 className="text-2xl text-gray-900">Schools</h2>
-        <Input className="w-[200px] rounded-3xl bg-yellow-50"/>      
-    </div>
+        <div className="bg-blue-200 p-2 rounded-t-2xl flex justify-between items-center">
+            <h2 className="text-2xl text-gray-900 font-bold">Schools</h2>
+            <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-300 h-4 w-4" />
+                <Input className="w-[200px] rounded-3xl bg-slate-100 pl-10 placeholder:text-blue-300 border-0" placeholder="Search schools" />      
+            </div>
+        </div>
       <div className="px-6 pb-6">
         <Table>
           <TableHeader>
