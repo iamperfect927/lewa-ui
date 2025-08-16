@@ -6,9 +6,9 @@ import { schools } from "@/lib/schoolsTable-data"
 
 const SchoolsTable = () => {
   return (
-    <div className="bg-white rounded-lg shadow-sm rounded-t-2xl w-full">
+    <div className="bg-white rounded-lg shadow-sm rounded-t-2xl rounded-b-2xl w-full mb-4">
         <div className="bg-blue-200 p-2 rounded-t-2xl flex justify-between items-center">
-            <h2 className="text-2xl text-gray-900 font-bold">Schools</h2>
+            <h2 className="px-5 text-2xl text-gray-900 font-bold">Schools</h2>
             <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-300 h-4 w-4" />
                 <Input className="w-[200px] rounded-3xl bg-slate-100 pl-10 placeholder:text-blue-300 border-0" placeholder="Search schools" />      
@@ -39,7 +39,7 @@ const SchoolsTable = () => {
                   {school.students}
                 </TableCell>
                 <TableCell className="text-center">
-                  <span className={`inline-flex px-3 py-1 rounded-full text-sm font-medium ${
+                  <span className={`inline-flex px-3 py-1 rounded-xl text-sm font-medium ${
                     school.status === "Active" 
                       ? "bg-blue-100 text-blue-800" 
                       : "bg-orange-100 text-orange-800"
@@ -66,9 +66,15 @@ const SchoolsTable = () => {
         </Table>
         
         <div className="mt-6">
-          <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-2 rounded-xl">
-            View All
-          </Button>
+          <Button 
+            label="View all"
+            // icon={<PlusCircle size={25}/>}
+            variant="primary"
+            size="primary"
+            // onClick={handleRegisterSchool}
+            // className="w-full"
+            // customStyle={{ background: "var(--gradient-stat-card)" }} //  gradient style
+          />
         </div>
       </div>
     </div>
