@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { SidebarProvider } from "@/components/ui/sidebar"
 import  SideBar  from '../components/sidebar'
 
 
@@ -33,7 +33,6 @@ export default function RootLayout({
         <SidebarProvider className="gap-3 rounded-2xl bg-accent"> 
           <div className="flex h-screen my5">
             <SideBar />
-            <SidebarTrigger className="text-black"/>
             {children}
           </div>       
         </SidebarProvider>

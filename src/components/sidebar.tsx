@@ -21,16 +21,17 @@ const SideBar = () => {
 
   return (
     <div className="rounded-3xl">
-      <Sidebar collapsible="icon" side="left">
+      <Sidebar collapsible="none" side="left">
         <div className="m-2 rounded-4xl p-2">
           <SidebarContent>
             <SidebarGroup>
-              <SidebarGroupLabel>
-                <Menu className="h-6 w-6 text-white" />
+              <SidebarGroupLabel className={cn("gap-2 text-white")}>
+                <Menu className="mt-1" />
                 <h1 className="text-2xl text-white font-semibold">Super Admin</h1>
               </SidebarGroupLabel>
 
-              <SidebarGroupContent>
+              <div className='mt-8'>
+                <SidebarGroupContent>
                 <SidebarMenu>
                   {sidebarConstants.map((item) => {
                     const isActive = pathname === item.url || pathname.startsWith(`${item.url}/`)
@@ -53,6 +54,7 @@ const SideBar = () => {
                   })}
                 </SidebarMenu>
               </SidebarGroupContent>
+              </div>
             </SidebarGroup>
           </SidebarContent>
         </div>
