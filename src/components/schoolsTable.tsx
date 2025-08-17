@@ -66,9 +66,18 @@ const SchoolsTable = () => {
         </Table>
         
         <div className="mt-6">
+<<<<<<< Updated upstream
           <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-2 rounded-xl">
             View All
           </Button>
+=======
+          <Button 
+            label="View all"
+            variant="primary"
+            size="primary"
+            onClick={() => alert("View all clicked!")}
+          />
+>>>>>>> Stashed changes
         </div>
       </div>
     </div>
