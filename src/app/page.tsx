@@ -1,15 +1,16 @@
 'use client';
 
 // import GeneralStats from "../../components/ui/StatsCard";
-import Logs from "@/components/ui/LogsCard";
+import Logs from "@/components/LogsCard";
 import { PlusCircle, FileText, UserPlus } from "lucide-react";
-import AppButton from "@/components/ui/AppButton";
+// import AppButton from "@/components/AppButton";
 import SchoolsTable from "@/components/schoolsTable";
 import {  School,ShieldUser, UserRound, Wallet, Users2, Users } from "lucide-react"
-import SchoolAreaDistributionChart from "@/components/ui/SchoolAreaDistributionChart";
-import StudentsPerSchoolChart from "@/components/ui/StudentsPerSchoolChart";
+import SchoolAreaDistributionChart from "@/components/SchoolAreaDistributionChart";
+import StudentsPerSchoolChart from "@/components/StudentsPerSchoolChart";
 import UsageStatsChart from "@/components/usageStatsChart";
-import StatCard from "@/components/ui/StatsCard";
+import { StatCard } from "@/components/StatsCard";
+import { Button } from "@/components/ui/button";
 
 
 export default function Dashboard() {
@@ -29,7 +30,7 @@ export default function Dashboard() {
     <div className="my-4 ">
 
       {/* Main content */}
-      <main className=" my-6 bg-dashboarb-background mx-4">
+      <main className=" my-6 bg-dashboarb-background mx-4 max-w-[95%]">
         <h1 className="text-2xl font-bold mb-4">Super Admin Dashboard</h1>
         
         {/* Stats Section */}
@@ -58,30 +59,36 @@ export default function Dashboard() {
 
         <div className="flex gap-4 mb-6">
             <div className=" flex-1 ...">
-                <AppButton 
+                <Button 
                   label="Register New School"
-                  icon={<PlusCircle />}
-                  variant="primary"
+                  icon={<PlusCircle size={25}/>}
+                  variant="default"
+                  size="default"
                   onClick={handleRegisterSchool}
-                                     className="w-full"
+                  className="w-full"
+                  customStyle={{ background: "var(--gradient-stat-card)" }} //  gradient style
                  />
             </div>
             <div className=" flex-1 ...">
-                <AppButton 
+                <Button 
                     label="Register New Teacher"
-                    icon={<UserPlus />}
-                    variant="primary"
-                    onClick={handleRegisterTeacher} 
-                    className="w-full"               
+                    icon={<UserPlus size={25}/>}
+                    variant="default"
+                    size="default"
+                    onClick={handleRegisterTeacher}
+                    className="w-full"
+                    customStyle={{ background: "var(--gradient-stat-card)" }} //  gradient style             
                 />
             </div>
             <div className="flex-1 ...">
-                <AppButton 
+                <Button 
                     label="Generate Report"
-                    icon={<FileText />}
-                    variant="primary"
-                    onClick={handleGenerateReport}   
-                    className="w-full"             
+                    icon={<FileText size={25}/>}
+                    variant="default"
+                    size="default"
+                    onClick={handleGenerateReport}
+                    className="w-full"
+                    customStyle={{ background: "var(--gradient-stat-card)" }} //  gradient style              
                 />
             </div>
         </div>
@@ -90,7 +97,6 @@ export default function Dashboard() {
           <StudentsPerSchoolChart />
           <SchoolAreaDistributionChart />
         </div>
-
         <div className="my-5">
           <UsageStatsChart />
         </div>
