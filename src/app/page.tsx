@@ -1,9 +1,9 @@
 'use client';
 
-// import GeneralStats from "../../components/ui/StatsCard";
+
 import Logs from "@/components/LogsCard";
 import { PlusCircle, FileText, UserPlus } from "lucide-react";
-// import AppButton from "@/components/AppButton";
+
 import SchoolsTable from "@/components/schoolsTable";
 import {  School,ShieldUser, UserRound, Wallet, Users2, Users } from "lucide-react"
 import SchoolAreaDistributionChart from "@/components/SchoolAreaDistributionChart";
@@ -12,12 +12,19 @@ import UsageStatsChart from "@/components/usageStatsChart";
 import { StatCard } from "@/components/StatsCard";
 import { Button } from "@/components/ui/button";
 
+import { AddSchoolDialog } from "@/components/AddSchoolDialog";
+import { useState } from "react";
+
 
 export default function Dashboard() {
 
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
       const handleRegisterSchool = () => {
-    alert("Register New School clicked!");
-  };
+        setIsDialogOpen(true);
+        console.log("button clicked");
+        console.log(isDialogOpen);
+      };
 
     const handleRegisterTeacher = () => {
     alert("Register New School clicked!");
@@ -34,8 +41,8 @@ export default function Dashboard() {
         <h1 className="text-2xl font-bold mb-4">Super Admin Dashboard</h1>
         
         {/* Stats Section */}
-        <div className="flex space-x-4 mb-8">
-            <div className="max-w-2xl flex-initial ...">
+        <div className="space-y-5 w-full lg:flex lg:space-x-4 mb-8 px-4">
+            <div className="w-full lg:max-w-2xl flex-initial">
                 <h1 className="text-2xl pl-5 py-2 bg-primary-header-background rounded-tl-2xl rounded-tr-2xl">General Statistics</h1>
                 <div className="bg-white p-5 rounded-bl-2xl rounded-br-2xl space-y-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -49,7 +56,7 @@ export default function Dashboard() {
                     
                 </div>
             </div>
-            <div className="w-81 flex-initial ...">
+            <div className="w-full lg:w-80 flex-initial">
                 <h1 className="text-2xl pl-5 py-2 bg-primary-header-background rounded-tl-2xl rounded-tr-2xl">Logs</h1>
                 <div className="bg-white p-5 rounded-bl-2xl rounded-br-2xl">
                     <Logs />
@@ -104,7 +111,12 @@ export default function Dashboard() {
           <SchoolsTable />
         </div>
 
-        
+      <AddSchoolDialog
+        isAddSchoolDialogOpen={isDialogOpen}
+        setIsAddSchoolDialogOpen={setIsDialogOpen}
+        title="Register School"
+      />
+
 
       </main>
     </div>
