@@ -58,6 +58,7 @@
   --color-primary-header-background: #E0EBFF;
   --color-stat-card-background: #2C57C1 ; /* Custom StatCard background */
   --color-stat-card-background-accent: #8DB4FF;
+  --color-input-field-background: #EFEFEF;
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
