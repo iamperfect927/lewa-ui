@@ -1,0 +1,21 @@
+export const subjects = {
+    schoolType: ["Grammar", "Technical", "Commercial", "Comprehensive"],
+    Grammar: [
+      "Maths",
+      "English",
+      "French",
+      "Physics",
+      "Chemistry",
+      "Biology",
+      "Geography",
+      "Literature",
+      "History",
+      "Citizenship",
+      "Economics",
+      "Philosophy",
+      "ICT",
+    ],
+    Technical: ["Technical Drawing", "Woodwork", "Metalwork", "Electronics"],
+    Commercial: ["Accounting", "Commerce", "Business Studies", "Economics"],
+    Comprehensive: ["Agriculture", "Food & Nutrition", "Computer Science"],
+  }
