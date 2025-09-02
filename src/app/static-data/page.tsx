@@ -1,8 +1,11 @@
+import StaticDataSubjectsComponents from '@/components/StaticDataSubjectsComponents'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>page</div>
+    <div className='p-3'>
+        <StaticDataSubjectsComponents />
+    </div>
   )
 }
 

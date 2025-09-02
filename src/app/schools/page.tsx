@@ -16,7 +16,7 @@ export default function Schools() {
   };
 
     const handleRegisterTeacher = () => {
-    alert("Register New School clicked!");
+    alert("Register New Teacher clicked!");
   };
 
 
